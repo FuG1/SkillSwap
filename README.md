@@ -9,5 +9,3 @@ Skill Matching – Discover and connect with people who complement your skills a
 Exchange Opportunities – Trade lessons in programming, guitar, or any other skill you’re passionate about 🎸💡
 Community Driven – Build a network of mentors and peers to help you succeed together 🌐💬
 Join us in revolutionizing the way people learn and share skills. Let's learn and grow together! 🚀
-
-Feel free to modify this description to best suit your project's vision and offerings.
