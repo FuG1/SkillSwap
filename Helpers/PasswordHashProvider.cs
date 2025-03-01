@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 
 namespace learn_asp.Helpers
 {
-    public static class PasswordHelper
+    public static class PasswordHashProvider
     {
         public static string HashPassword(string password)
         {
-            byte[] salt = new byte[128 / 8];
+            byte[] salt = new byte[16];
             using (var rng = RandomNumberGenerator.Create())
             {
                 rng.GetBytes(salt);
@@ -17,7 +17,7 @@ namespace learn_asp.Helpers
                 salt: salt,
                 prf: KeyDerivationPrf.HMACSHA256,
                 iterationCount: 10000,
-                numBytesRequested: 256 / 8));
+                numBytesRequested: 32));
 
             return $"{Convert.ToBase64String(salt)}.{hashed}";
         }
@@ -38,7 +38,7 @@ namespace learn_asp.Helpers
                 salt: salt,
                 prf: KeyDerivationPrf.HMACSHA256,
                 iterationCount: 10000,
-                numBytesRequested: 256 / 8));
+                numBytesRequested: 32));
 
             return expectedHash == actualHash;
         }
